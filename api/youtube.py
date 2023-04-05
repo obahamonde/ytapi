@@ -86,4 +86,4 @@ async def search(query: str):
             for match in PATTERN.findall(response):
                 _.append(match) if match not in _ else None
         urls = [f"{YOUTUBE_URL}{video_id}" for video_id in _]
-        return await asyncio.gather(*[get_video_info(url) for url in urls])
+        return urls
